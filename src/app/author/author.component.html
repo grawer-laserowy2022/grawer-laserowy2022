@@ -1,0 +1,47 @@
+<div class="panel panel-default col-lg-6 offset-lg-3 mt-3">
+    <div class="panel-heading  border border-dark rounded">
+      <h3 class="panel-title text-center ">Autor</h3>
+    </div>
+  
+    <div class="panel-body border-bottom border border-dark rounded">
+        <form #sendEmailForm="ngForm" (ngSubmit)="sendEmail(sendEmailForm)">
+            <label class="ml-4 mt-3">
+                <h2>Dane autora: </h2>
+            </label>
+
+            <div class="form-group col-11 ml-3">
+                <label for="name" >Imię</label>
+                <input class="form-control" name="name" placeholder="Jan" disabled="true">
+            </div>
+
+            <div class="form-group col-11 ml-3">
+                <label for="surname" >Nazwisko</label>
+                <input class="form-control" name="surname" placeholder="Rubach" disabled="true">
+            </div>
+
+            <div class="form-group col-11 ml-3">
+                <label for="numberPhone" >Telefon</label>
+                <input class="form-control" name="numberPhone" placeholder="784455840" disabled="true">
+            </div>
+
+            <label class="ml-4">
+                <h2>Napisz do autora: </h2>
+            </label>
+            
+            <div class="form-group col-11 ml-3">
+                <label for="author" >Adres email</label>
+                <input class="form-control" name="author" id="author" placeholder="Podaj adres email" [(ngModel)]="mail.author">
+            </div>
+
+            <div class="form-group col-11 ml-3">
+                <label for="message">Wiadomość</label>
+                <textarea class="form-control" name="message" rows="3" [(ngModel)]="mail.message"></textarea>
+            </div>
+
+            <div class="form-group col-11 ml-3">
+                <button type="submit" class="btn btn-warning btn-lg btn-block text-center" [disabled] = "buttonIsActive() || mailIsSending">Wyślij wiadomość</button>
+            </div>
+
+        </form>
+    </div>
+</div>

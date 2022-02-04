@@ -1,0 +1,21 @@
+<div class = "col-12">
+    <div class="input-group col-lg-6 mt-3 align-search">
+        <input type="text" class="form-control" placeholder="Tytuł projektu" (change)="userSerachNameProject($event)">
+    </div>
+    <form class="form-inline" >
+        <app-card-table *ngFor="let project of allProjects; let i = index"  [attr.data-index]="i" [nameProject] = "project.nameProject" [originalPhotoBinary] = "project.originalImg.picByte" [binaryPhotoBinary] = "project.binaryImg.picByte" [monochromePhotoBinary]="project.monochromeImg.picByte" class="col-6" [isLeftCard]="i%2==0"></app-card-table>
+        </form>
+
+    <nav class="mt-1">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a [ngClass]="(activePage==1)? 'page-link disabled': 'page-link'" (click)="changePage(activePage-1)">Poprzednia</a>
+            </li> 
+            <li *ngFor="let numberPage of prepareNumbersTable(totalPages)" [ngClass]="(numberPage==activePage)?'page-item active': 'page-item'"><a class="page-link" (click)="changePage(numberPage)">{{numberPage}} <span *ngIf="numberPage==activePage" class="sr-only">(current)</span> </a></li>
+            <li class="page-item">
+                <a [ngClass]="(activePage==totalPages)? 'page-link disabled': 'page-link'" (click)="changePage(activePage+1)">Następna</a>
+            </li>  
+        </ul>
+    </nav>
+  
+</div>

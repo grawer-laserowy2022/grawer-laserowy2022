@@ -1,0 +1,29 @@
+.panel-heading{
+    background-color: rgb(227,242,253);
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 22px;
+}
+
+.panel-body{
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 19px;
+    background-color: white;
+}
+
+.img-in-gallery{
+    height: 200px; 
+    max-width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left-site{
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+.right-site{
+    margin-right: auto;
+    margin-left: 0px;
+}

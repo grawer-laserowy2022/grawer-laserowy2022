@@ -1,0 +1,23 @@
+<ul ngbNav #nav="ngbNav" class="nav-tabs navbar-light" style="background-color: #e3f2fd;">
+    <span class="navbar-text ml-3 mr-3">
+      Grawer Laserowy
+    </span>
+    <li ngbNavItem>
+      <a ngbNavLink routerLink="newProject">Stwórz nowy projekt</a>
+      <ng-template ngbNavContent>Stwórz nowy projekt</ng-template>
+    </li>
+    <li ngbNavItem>
+      <a ngbNavLink routerLink="allProjects">Wszystkie projekty</a>
+      <ng-template ngbNavContent>Wszystkie projekty</ng-template>
+    </li>
+    <li ngbNavItem>
+      <a ngbNavLink routerLink="instruction">Instrukcja</a>
+      <ng-template ngbNavContent>Instrukcja</ng-template>
+    </li>
+    <li ngbNavItem>
+      <a ngbNavLink routerLink="author">Autor</a>
+      <ng-template ngbNavContent>Autor</ng-template>
+    </li>
+  </ul>
+
+<router-outlet></router-outlet>

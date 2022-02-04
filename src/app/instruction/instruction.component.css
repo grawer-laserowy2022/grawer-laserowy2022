@@ -1,0 +1,11 @@
+.panel-heading{
+    background-color: rgb(227,242,253);
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 22px;
+}
+
+.panel-body{
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 19px;
+    background-color: white;
+}

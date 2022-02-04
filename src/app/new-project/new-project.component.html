@@ -1,0 +1,58 @@
+<div class="panel panel-default col-lg-6 offset-lg-3 mt-3">
+    <div class="panel-heading  border border-dark rounded">
+      <h3 class="panel-title text-center ">Nowy Projekt</h3>
+    </div>
+  
+    <div class="panel-body border-bottom border border-dark rounded">
+        <form #createProjectForm="ngForm" (ngSubmit)="createProject()">
+            <div class="form-group form-inline mt-3">
+                <label for="projectName" class="col-3">Nazwa projektu</label>
+                <input class="form-control" name="projectName" placeholder="Podaj nazwe projektu" class="col-8 ml-1" [(ngModel)]="projectForm.name">
+            </div>
+            <div class="form-group form-inline mt-3">
+                <label for="file-upload" class="col-3">Wybierz zdjęcie</label>
+                <label for="file-upload" class="custom-file-upload col-8 ml-1">
+                    <i class="fa fa-cloud-upload fileUploadButton">Wgraj zdjęcie</i>
+                </label>
+                <input id="file-upload" type="file" (change)="setFile($event)" />
+            </div>
+            <div class="form-group">
+                <mdb-carousel [isControls]="true" class="carousel slide carousel-fade ml-3 mr-5" [animation]="'fade'">
+                    <mdb-carousel-item *ngIf="!url">
+                        <div class="view w-100">
+                            <img src = "assets/img/NoImage.jpg" class="img-in-gallery">
+                            <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+                        </div>
+                    </mdb-carousel-item>
+                    <mdb-carousel-item *ngIf="url">
+                        <div class="view w-100">
+                            <img [src]="url" class="img-in-gallery">
+                            <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+                        </div>
+                    </mdb-carousel-item>
+                    <!-- <mdb-carousel-item *ngIf="retrievedImages[0]">
+                        <div class="view w-100">
+                            <img [src]="retrievedImages[0]" class="img-in-gallery">
+                            <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+                        </div>
+                    </mdb-carousel-item> -->
+                    <mdb-carousel-item *ngIf="retrievedImages[1]">
+                        <div class="view w-100">
+                            <img [src]="retrievedImages[1]" class="img-in-gallery">
+                            <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+                        </div>
+                    </mdb-carousel-item>
+                </mdb-carousel>
+            </div>
+
+            <div class="form-group form-inline">
+                <label for="prog" class="col-3">Kontrast</label>
+                <input name="prog" type="range" min="0" max="255" step="1" class="col-8" (change)="updateProg($event)"/>
+            </div>
+
+            <div class="form-group col-11 ml-3">
+                <button type="submit" class="btn btn-warning btn-lg btn-block text-center" [disabled]="!(url && projectForm.name)">Zapisz</button>
+            </div>
+        </form>
+    </div>
+</div>
